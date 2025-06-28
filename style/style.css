@@ -165,5 +165,8 @@ body {
 }
 
 .contact-section iframe{
-    margin: 0 auto;
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    margin: 2rem auto 0;
 }
