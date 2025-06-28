@@ -159,3 +159,11 @@ body {
 .contact-link:hover {
     color: var(--accent-color-2);
 }
+
+.badge-base__link LI-simple-link{
+    display: none;
+}
+
+.contact-section iframe{
+    margin: 0 auto;
+}
