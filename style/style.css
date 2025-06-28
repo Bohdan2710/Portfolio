@@ -160,7 +160,7 @@ body {
     color: var(--accent-color-2);
 }
 
-.badge-base__link LI-simple-link{
+.badge-base__link.LI-simple-link{
     display: none;
 }
 
