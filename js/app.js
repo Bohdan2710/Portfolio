@@ -1,8 +1,5 @@
 gsap.registerPlugin(ScrollTrigger);
 
-// ========================
-// LANGUAGE SWITCHER
-// ========================
 const langBtn = document.getElementById('langToggle');
 let currentLang = 'en';
 
@@ -18,17 +15,11 @@ langBtn.addEventListener('click', () => {
   document.documentElement.lang = isUa ? 'uk' : 'en';
 });
 
-// ========================
-// HEADER SCROLL
-// ========================
 const header = document.getElementById('siteHeader');
 window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
 
-// ========================
-// MOBILE MENU
-// ========================
 const burger = document.getElementById('headerBurger');
 const mobileNav = document.getElementById('mobileNav');
 
@@ -44,9 +35,6 @@ mobileNav.querySelectorAll('a').forEach(a => {
   });
 });
 
-// ========================
-// PARTICLE BACKGROUND (from template-auto-1)
-// ========================
 function initAmbientParticles() {
   const canvas = document.getElementById('particle-canvas');
   if (!canvas) return;
@@ -92,9 +80,6 @@ function initAmbientParticles() {
 
 initAmbientParticles();
 
-// ========================
-// FLOATING ICONS — MOUSE PARALLAX
-// ========================
 const floatingIcons = document.querySelectorAll('.fi');
 let mouseX = 0, mouseY = 0;
 
@@ -113,7 +98,6 @@ document.addEventListener('mousemove', e => {
   });
 }, { passive: true });
 
-// Floating idle animation (before/without mouse)
 floatingIcons.forEach((icon, i) => {
   gsap.to(icon, {
     y: `+=${6 + (i % 3) * 4}`,
@@ -126,9 +110,6 @@ floatingIcons.forEach((icon, i) => {
   });
 });
 
-// ========================
-// HERO ENTRANCE
-// ========================
 const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 heroTl
   .to('.hero-tag',  { opacity: 1, y: 0, duration: 0.7, delay: 0.3 })
@@ -143,9 +124,6 @@ heroTl
   .from('.hero-right', { opacity: 0, x: 40, duration: 0.9 }, '-=0.4')
   .from('.hero-contact-card', { opacity: 0, y: 20, stagger: 0.1, duration: 0.5 }, '<');
 
-// ========================
-// ABOUT SECTION
-// ========================
 gsap.from('.about-text', {
   scrollTrigger: { trigger: '.about-section', start: 'top 80%' },
   opacity: 0, x: -40, duration: 0.9, ease: 'power3.out'
@@ -159,9 +137,6 @@ gsap.from('.skills-tags span', {
   opacity: 0, y: 15, stagger: 0.04, duration: 0.4, ease: 'power2.out'
 });
 
-// ========================
-// SECTION HEADERS
-// ========================
 gsap.utils.toArray('.section-header').forEach(el => {
   gsap.from(el, {
     scrollTrigger: { trigger: el, start: 'top 85%' },
@@ -169,9 +144,6 @@ gsap.utils.toArray('.section-header').forEach(el => {
   });
 });
 
-// ========================
-// AUTOMATION CARDS
-// ========================
 gsap.utils.toArray('.auto-card').forEach((card, i) => {
   gsap.from(card, {
     scrollTrigger: { trigger: card, start: 'top 88%' },
@@ -193,9 +165,6 @@ gsap.utils.toArray('.auto-card-metrics').forEach(el => {
   });
 });
 
-// ========================
-// FRONTEND CARDS
-// ========================
 const cardGrid = document.querySelector('.portfolio-grid');
 if (cardGrid) {
   gsap.from('.portfolio-grid .card', {
@@ -204,9 +173,6 @@ if (cardGrid) {
   });
 }
 
-// ========================
-// AUTO-CARD IMAGE SLIDER
-// ========================
 document.querySelectorAll('.auto-card-visual[data-images]').forEach(visual => {
   const images = (visual.dataset.images || '').split(',').map(s => s.trim()).filter(Boolean);
   if (images.length < 2) return;
@@ -273,9 +239,6 @@ document.querySelectorAll('.auto-card-visual[data-images]').forEach(visual => {
   card.addEventListener('mouseleave', () => { clearInterval(interval); interval = null; userPaused = false; });
 });
 
-// ========================
-// LIGHTBOX
-// ========================
 (function () {
   const lb = document.createElement('div');
   lb.className = 'lb-overlay';
@@ -321,9 +284,6 @@ document.querySelectorAll('.auto-card-visual[data-images]').forEach(visual => {
   });
 }());
 
-// ========================
-// IMAGE SLIDER
-// ========================
 document.querySelectorAll('.card-slider').forEach(slider => {
   const images = (slider.dataset.images || '').split(',').map(s => s.trim()).filter(Boolean);
   if (images.length < 2) return;
