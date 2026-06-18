@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bohdan2710.github.io/Portfolio/sitemap.xml
