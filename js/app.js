@@ -234,32 +234,92 @@ document.querySelectorAll('.auto-card-visual[data-images]').forEach(visual => {
   });
   visual.appendChild(dotsWrap);
 
-  function goTo(index) {
+  let userPaused = false;
+
+  function goTo(index, pause) {
     imgWrap.querySelectorAll('.auto-slide-img')[current].classList.remove('active');
     dotsWrap.querySelectorAll('.auto-slide-dot')[current].classList.remove('active');
     current = index;
     imgWrap.querySelectorAll('.auto-slide-img')[current].classList.add('active');
     dotsWrap.querySelectorAll('.auto-slide-dot')[current].classList.add('active');
+    if (pause) { userPaused = true; clearInterval(interval); interval = null; }
   }
 
   const prevBtn = document.createElement('button');
   prevBtn.className = 'auto-slide-prev';
   prevBtn.setAttribute('aria-label', 'Previous');
   prevBtn.innerHTML = '&#8249;';
-  prevBtn.addEventListener('click', e => { e.stopPropagation(); goTo((current - 1 + images.length) % images.length); });
+  prevBtn.addEventListener('click', e => { e.stopPropagation(); goTo((current - 1 + images.length) % images.length, true); });
   visual.appendChild(prevBtn);
 
   const nextBtn = document.createElement('button');
   nextBtn.className = 'auto-slide-next';
   nextBtn.setAttribute('aria-label', 'Next');
   nextBtn.innerHTML = '&#8250;';
-  nextBtn.addEventListener('click', e => { e.stopPropagation(); goTo((current + 1) % images.length); });
+  nextBtn.addEventListener('click', e => { e.stopPropagation(); goTo((current + 1) % images.length, true); });
   visual.appendChild(nextBtn);
 
+  const expandBtn = document.createElement('button');
+  expandBtn.className = 'auto-slide-expand';
+  expandBtn.setAttribute('aria-label', 'Fullscreen');
+  expandBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>';
+  expandBtn.addEventListener('click', e => { e.stopPropagation(); openLightbox(images, current); });
+  visual.appendChild(expandBtn);
+
   let interval = null;
-  card.addEventListener('mouseenter', () => { interval = setInterval(() => goTo((current + 1) % images.length), 2800); });
-  card.addEventListener('mouseleave', () => { clearInterval(interval); interval = null; });
+  card.addEventListener('mouseenter', () => {
+    if (!userPaused) { interval = setInterval(() => goTo((current + 1) % images.length), 2800); }
+  });
+  card.addEventListener('mouseleave', () => { clearInterval(interval); interval = null; userPaused = false; });
 });
+
+// ========================
+// LIGHTBOX
+// ========================
+(function () {
+  const lb = document.createElement('div');
+  lb.className = 'lb-overlay';
+  lb.innerHTML = `
+    <div class="lb-inner">
+      <img class="lb-img" src="" alt="">
+      <button class="lb-prev">&#8249;</button>
+      <button class="lb-next">&#8250;</button>
+      <button class="lb-close">&#x2715;</button>
+      <div class="lb-dots"></div>
+    </div>`;
+  document.body.appendChild(lb);
+
+  const lbImg = lb.querySelector('.lb-img');
+  const lbDots = lb.querySelector('.lb-dots');
+  let lbImages = [], lbCurrent = 0;
+
+  function lbGoTo(i) {
+    lbCurrent = (i + lbImages.length) % lbImages.length;
+    lbImg.src = lbImages[lbCurrent];
+    lbDots.querySelectorAll('.lb-dot').forEach((d, idx) => d.classList.toggle('active', idx === lbCurrent));
+  }
+
+  window.openLightbox = function (imgs, start) {
+    lbImages = imgs;
+    lbDots.innerHTML = imgs.map((_, i) => `<div class="lb-dot${i === start ? ' active' : ''}"></div>`).join('');
+    lbDots.querySelectorAll('.lb-dot').forEach((d, i) => d.addEventListener('click', () => lbGoTo(i)));
+    lbImg.src = imgs[start];
+    lbCurrent = start;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  lb.querySelector('.lb-close').addEventListener('click', () => { lb.classList.remove('open'); document.body.style.overflow = ''; });
+  lb.querySelector('.lb-prev').addEventListener('click', () => lbGoTo(lbCurrent - 1));
+  lb.querySelector('.lb-next').addEventListener('click', () => lbGoTo(lbCurrent + 1));
+  lb.addEventListener('click', e => { if (e.target === lb) { lb.classList.remove('open'); document.body.style.overflow = ''; } });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'ArrowLeft') lbGoTo(lbCurrent - 1);
+    if (e.key === 'ArrowRight') lbGoTo(lbCurrent + 1);
+    if (e.key === 'Escape') { lb.classList.remove('open'); document.body.style.overflow = ''; }
+  });
+}());
 
 // ========================
 // IMAGE SLIDER
