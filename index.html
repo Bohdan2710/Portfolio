@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bohdan Yatsun — Web Developer & Automation Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+
+  <div class="background-aurora"></div>
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- FIXED HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="#" class="header-logo">BY<span>.</span></a>
+      <nav class="header-nav">
+        <a href="#about" data-ua="Про мене">About</a>
+        <a href="#automation" data-ua="Проєкти">Automation</a>
+        <a href="#projects" data-ua="Фронтенд">Frontend</a>
+      </nav>
+      <div class="header-actions">
+        <button class="lang-toggle" id="langToggle">UA</button>
+        <button class="header-burger" id="headerBurger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="#about" data-ua="Про мене">About</a>
+      <a href="#automation" data-ua="Проєкти">Automation</a>
+      <a href="#projects" data-ua="Фронтенд">Frontend</a>
+    </nav>
+  </header>
+
+  <!-- FLOATING ICONS (mouse parallax) -->
+  <div class="floating-icons" aria-hidden="true">
+    <div class="fi fi-1" data-depth="20"><svg viewBox="0 0 40 40"><text x="2" y="30" font-size="26" fill="currentColor">&lt;/&gt;</text></svg></div>
+    <div class="fi fi-2" data-depth="35"><svg viewBox="0 0 40 40"><text x="4" y="30" font-size="22" fill="currentColor">{ }</text></svg></div>
+    <div class="fi fi-3" data-depth="15"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="14" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="20" cy="20" r="5" fill="currentColor"/></svg></div>
+    <div class="fi fi-4" data-depth="28"><svg viewBox="0 0 40 40"><polygon points="20,4 36,34 4,34" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></div>
+    <div class="fi fi-5" data-depth="18"><svg viewBox="0 0 40 40"><text x="0" y="28" font-size="18" font-weight="700" fill="currentColor">n8n</text></svg></div>
+    <div class="fi fi-6" data-depth="40"><svg viewBox="0 0 40 40"><rect x="6" y="6" width="28" height="28" rx="6" fill="none" stroke="currentColor" stroke-width="2.5"/><rect x="13" y="13" width="14" height="14" rx="3" fill="currentColor" opacity=".5"/></svg></div>
+    <div class="fi fi-7" data-depth="22"><svg viewBox="0 0 40 40"><text x="2" y="28" font-size="16" font-weight="800" fill="currentColor">AI</text></svg></div>
+    <div class="fi fi-8" data-depth="32"><svg viewBox="0 0 40 40"><path d="M20 4 L36 13 L36 27 L20 36 L4 27 L4 13 Z" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></div>
+    <div class="fi fi-9" data-depth="12"><svg viewBox="0 0 40 40"><text x="2" y="28" font-size="15" font-weight="700" fill="currentColor">→→</text></svg></div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <span class="hero-tag" data-ua="Відкритий до роботи · Дистанційно">Available for work · Remote</span>
+        <h1 class="hero-name">Bohdan Yatsun</h1>
+        <p class="hero-role" data-ua="Веб-розробник та Automation Engineer">Web Developer & Automation Engineer</p>
+        <p class="hero-desc" data-ua="Будую системи, що замінюють ручні процеси.<br>3 роки фронтенду · 1 рік продакшн-автоматизації.">I build systems that replace manual workflows.<br>3 years of frontend · 1 year of production automation.</p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-val">3+</span>
+            <span class="stat-label" data-ua="Роки фронтенду">Years frontend</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-val">1+</span>
+            <span class="stat-label" data-ua="Рік автоматизації">Year automation</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-val">100+</span>
+            <span class="stat-label" data-ua="Сайтів / місяць">Sites / month</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-contact-grid">
+          <a href="mailto:yatsunbohdan194@gmail.com" class="hero-contact-card">
+            <div class="hcc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg></div>
+            <div class="hcc-label">Email</div>
+            <div class="hcc-value">yatsunbohdan194@gmail.com</div>
+          </a>
+          <a href="https://t.me/Bodan194" class="hero-contact-card" target="_blank" rel="noopener noreferrer">
+            <div class="hcc-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></div>
+            <div class="hcc-label">Telegram</div>
+            <div class="hcc-value">@Bodan194</div>
+          </a>
+          <a href="https://www.linkedin.com/in/bohdan-yatsun-77bb3b246/" class="hero-contact-card" target="_blank" rel="noopener noreferrer">
+            <div class="hcc-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+            <div class="hcc-label">LinkedIn</div>
+            <div class="hcc-value">Bohdan Yatsun</div>
+          </a>
+          <a href="https://github.com/Bohdan2710" class="hero-contact-card" target="_blank" rel="noopener noreferrer">
+            <div class="hcc-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div>
+            <div class="hcc-label">GitHub</div>
+            <div class="hcc-value">Bohdan2710</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- ABOUT -->
+    <section class="section about-section" id="about">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 class="section-title" style="text-align:left; margin-bottom: 20px;" data-ua="Про мене">About me</h2>
+          <p data-ua="Web Developer з 3-річним досвідом створення, оптимізації та підтримки адаптивних вебсайтів. Спеціалізуюся на технічних рішеннях для Affiliate Marketing. Розробляю інструменти, що автоматизують створення лендінгів, переклад та унікалізацію коду для команд із великими обсягами трафіку.">Web Developer with 3 years of experience in building, optimizing, and maintaining responsive websites. I specialize in technical solutions for affiliate marketing. I develop tools that automate the creation of landing pages, translation, and code obfuscation for teams handling high traffic volumes.</p>
+          <p style="margin-top: 16px;" data-ua="Впевнений користувач технологій штучного інтелекту — щоденно інтегрую їх для оптимізації процесів та скорочення витрат. Будую автоматизовані пайплайни через n8n та працюю напряму з Claude API, Gemini API та OpenRouter. Фокус — не просто автоматизація задач, а переосмислення процесів.">Advanced user of AI technologies, integrating them daily to optimize workflows and reduce costs. I build automated pipelines using n8n and work directly with Claude API, Gemini API, and OpenRouter. Focused on rethinking entire workflows — not just automating tasks.</p>
+        </div>
+        <div class="skills-block">
+          <div class="skills-group">
+            <span class="skills-group-label" data-ua="Фронтенд">Frontend</span>
+            <div class="skills-tags">
+              <span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>SCSS</span><span>GSAP</span><span>BEM</span><span>Gulp</span><span>Figma</span><span>WordPress</span>
+            </div>
+          </div>
+          <div class="skills-group">
+            <span class="skills-group-label" data-ua="Бекенд та інфраструктура">Backend & Infra</span>
+            <div class="skills-tags">
+              <span>Node.js</span><span>Python</span><span>Express</span><span>Docker</span><span>GitHub</span>
+            </div>
+          </div>
+          <div class="skills-group">
+            <span class="skills-group-label" data-ua="AI та автоматизація">AI & Automation</span>
+            <div class="skills-tags">
+              <span>Claude API</span><span>Gemini API</span><span>OpenRouter</span><span>n8n</span><span>AI Agents</span>
+            </div>
+          </div>
+          <div class="skills-group">
+            <span class="skills-group-label" data-ua="Інтеграції">Integrations</span>
+            <div class="skills-tags">
+              <span>Google Sheets API</span><span>Google Drive API</span><span>Zoho API</span><span>REST API</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTOMATION PROJECTS -->
+    <section class="section automation-section" id="automation">
+      <div class="section-header">
+        <div class="section-icon">⚡</div>
+        <h2 class="section-title" data-ua="Автоматизація та AI Проєкти">Automation & AI Projects</h2>
+        <p class="section-subtitle" data-ua="Продакшн-системи з реальним бізнес-результатом · NDA">Production systems built for real business impact · NDA</p>
+      </div>
+      <div class="automation-grid">
+
+        <div class="auto-card">
+          <div class="auto-card-visual grad-purple">
+          </div>
+          <div class="auto-card-pipeline">
+            <div class="pipeline">
+              <div class="p-step" data-ua="Google Sheets">Google Sheets</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step" data-ua="Генератор">Generator</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step" data-ua="Gemini AI">Gemini AI</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step p-end" data-ua="ZIP Вивід">ZIP Output</div>
+            </div>
+          </div>
+          <div class="auto-card-content">
+            <div class="auto-card-badges">
+              <span class="badge badge-nda" data-ua="NDA · Продакшн">NDA · Production</span>
+              <span class="badge badge-stack">Python</span>
+              <span class="badge badge-stack">Flask</span>
+              <span class="badge badge-stack">Gemini AI</span>
+              <span class="badge badge-stack">Google Sheets</span>
+              <span class="badge badge-stack">Zoho API</span>
+              <span class="badge badge-stack">Docker</span>
+            </div>
+            <h3 data-ua="Пайплайн генерації сайтів">Site Generation Pipeline</h3>
+            <p data-ua="Автоматизована система масової генерації сайтів. Замінила команду верстальників — підключивши джерела даних (Google Sheets, Zoho) з AI-движками шаблонів та ZIP-доставкою.">Automated system for bulk website creation. Replaced a dedicated markup team by connecting data sources (Google Sheets, Zoho) with AI-powered template engines and a ZIP-based delivery pipeline.</p>
+            <div class="auto-card-metrics">
+              <div class="metric">
+                <span class="metric-val">5 devs</span>
+                <span class="metric-label" data-ua="замінено автоматизацією">replaced by automation</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">1 day → mins</span>
+                <span class="metric-label" data-ua="час створення сайту">site production time</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">$0 / site</span>
+                <span class="metric-label" data-ua="вартість виробництва">production cost</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="auto-card">
+          <div class="auto-card-visual grad-blue">
+          </div>
+          <div class="auto-card-pipeline">
+            <div class="pipeline">
+              <div class="p-step" data-ua="ZIP Завантаження">ZIP Upload</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step" data-ua="HTML Парсинг">HTML Parse</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step" data-ua="AI + Кеш">AI + Cache</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step p-end" data-ua="Перекладений ZIP">Translated ZIP</div>
+            </div>
+          </div>
+          <div class="auto-card-content">
+            <div class="auto-card-badges">
+              <span class="badge badge-nda" data-ua="NDA · Продакшн">NDA · Production</span>
+              <span class="badge badge-stack">Node.js</span>
+              <span class="badge badge-stack">Express</span>
+              <span class="badge badge-stack">Gemini API</span>
+              <span class="badge badge-stack">Docker</span>
+              <span class="badge badge-stack">JWT</span>
+              <span class="badge badge-stack">Cheerio</span>
+            </div>
+            <h3 data-ua="Сервіс перекладу та унікалізації">Translation & Uniqualization Service</h3>
+            <p data-ua="Node.js мікросервіс для AI-перекладу HTML-архівів сайтів. Шар кешування повторно використовує наявні переклади — зводячи вартість майже до нуля на повторному контенті.">Node.js microservice for AI-powered multi-language translation of HTML site archives. A smart caching layer reuses existing translations — cutting costs to near zero on repeated content.</p>
+            <div class="auto-card-metrics">
+              <div class="metric">
+                <span class="metric-val">&lt;$0.01</span>
+                <span class="metric-label" data-ua="за багатосторінковий сайт">per multi-page site</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">10 workers</span>
+                <span class="metric-label" data-ua="паралельна обробка">concurrent processing</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">Multi-lang</span>
+                <span class="metric-label" data-ua="з вбудованим віджетом">with injected widget</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="auto-card">
+          <div class="auto-card-visual grad-indigo">
+          </div>
+          <div class="auto-card-pipeline">
+            <div class="pipeline">
+              <div class="p-step" data-ua="Черга задач">Jobs Queue</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step" data-ua="SEO Перевірка">SEO Check</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step" data-ua="Прев'ю">Preview</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step p-end" data-ua="Завантаження">Download</div>
+            </div>
+          </div>
+          <div class="auto-card-content">
+            <div class="auto-card-badges">
+              <span class="badge badge-nda" data-ua="NDA · Продакшн">NDA · Production</span>
+              <span class="badge badge-stack">Python</span>
+              <span class="badge badge-stack">Flask</span>
+              <span class="badge badge-stack">Google Sheets</span>
+              <span class="badge badge-stack">Zoho</span>
+              <span class="badge badge-stack">Docker</span>
+            </div>
+            <h3 data-ua="CRM для управління сайтами">Site Management CRM</h3>
+            <p data-ua="Повнофункціональна CRM для відстеження, валідації та управління сотнями згенерованих сайтів. Інтегрує Google Sheets і Zoho для SEO-аналізу в реальному часі, планування задач та live-прев'ю.">Full-featured CRM for tracking, validating and managing hundreds of generated websites. Integrates Google Sheets and Zoho for real-time SEO analysis, job scheduling, live HTML preview and bulk download.</p>
+            <div class="auto-card-metrics">
+              <div class="metric">
+                <span class="metric-val">100s</span>
+                <span class="metric-label" data-ua="сайтів відстежується">sites tracked</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">Real-time</span>
+                <span class="metric-label" data-ua="SEO валідація">SEO validation</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">Live</span>
+                <span class="metric-label" data-ua="система прев'ю">preview system</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="auto-card">
+          <div class="auto-card-visual grad-teal">
+          </div>
+          <div class="auto-card-pipeline">
+            <div class="pipeline">
+              <div class="p-step" data-ua="ZIP Пакет">ZIP Batch</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step" data-ua="JS Розпакування">JS Extract</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step" data-ua="Валідація">Validate</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step p-end" data-ua="Звіт">Report</div>
+            </div>
+          </div>
+          <div class="auto-card-content">
+            <div class="auto-card-badges">
+              <span class="badge badge-open" data-ua="Відкритий інструмент">Open Tool</span>
+              <span class="badge badge-stack">Vanilla JS</span>
+              <span class="badge badge-stack">JSZip</span>
+              <span class="badge badge-stack">Zero deps</span>
+            </div>
+            <h3 data-ua="SEO Чекер та Прев'ю інструмент">SEO Checker & Preview Tool</h3>
+            <p data-ua="Браузерний інструмент для пакетної SEO-валідації HTML-архівів. Без залежностей, працює повністю на клієнті. Перевіряє canonical, hreflang, robots.txt, sitemap з live-прев'ю.">Browser-based tool for batch SEO validation of HTML archives. Zero dependencies, runs entirely client-side. Checks canonical tags, hreflangs, robots.txt, sitemaps with live responsive preview.</p>
+            <div class="auto-card-metrics">
+              <div class="metric">
+                <span class="metric-val">0 deps</span>
+                <span class="metric-label" data-ua="без збірки">no build required</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">Batch</span>
+                <span class="metric-label" data-ua="ZIP завантаження">ZIP upload</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">320–2500px</span>
+                <span class="metric-label" data-ua="діапазон прев'ю">live preview range</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="auto-card auto-card-wide">
+          <div class="auto-card-visual grad-green">
+          </div>
+          <div class="auto-card-pipeline">
+            <div class="pipeline">
+              <div class="p-step" data-ua="Аккаунти">Accounts</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step" data-ua="Домени">Domains</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step" data-ua="Сайти">Sites</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step" data-ua="SEO Панель">SEO Panel</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step p-end" data-ua="Uptime">Uptime</div>
+            </div>
+          </div>
+          <div class="auto-card-content">
+            <div class="auto-card-badges">
+              <span class="badge badge-nda" data-ua="NDA · Продакшн">NDA · Production</span>
+              <span class="badge badge-stack">Python</span>
+              <span class="badge badge-stack">Flask</span>
+              <span class="badge badge-stack">SQLite</span>
+              <span class="badge badge-stack">Ahrefs API</span>
+              <span class="badge badge-stack">Cloudflare API</span>
+              <span class="badge badge-stack">Namecheap API</span>
+              <span class="badge badge-stack">Keitaro</span>
+              <span class="badge badge-stack">Docker</span>
+            </div>
+            <h3 data-ua="Portfolio CRM — Повний цикл управління">Portfolio CRM — Full Lifecycle Management</h3>
+            <p data-ua="Комплексна CRM для управління портфелем партнерських сайтів. Централізує API-акаунти (реєстратори, Cloudflare, FTP), автоматизує реєстрацію доменів, деплой сайтів та збирає SEO-метрики через Ahrefs, Google Search Console та Keitaro.">Full-stack CRM for managing an affiliate site portfolio. Centralises API accounts (registrars, Cloudflare, FTP), automates domain registration and site deployment, and aggregates SEO metrics from Ahrefs, Google Search Console, and Keitaro in one dashboard.</p>
+            <div class="auto-card-metrics">
+              <div class="metric">
+                <span class="metric-val">5 APIs</span>
+                <span class="metric-label" data-ua="інтегровано в одному місці">integrated in one place</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">Auto</span>
+                <span class="metric-label" data-ua="деплой + DNS конфіг">deploy + DNS config</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">Live</span>
+                <span class="metric-label" data-ua="Ahrefs · GSC · Keitaro">Ahrefs · GSC · Keitaro</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">Uptime</span>
+                <span class="metric-label" data-ua="моніторинг 24/7">monitoring 24/7</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FRONTEND PROJECTS -->
+    <section class="section portfolio-section" id="projects">
+      <div class="section-header">
+        <div class="section-icon">✦</div>
+        <h2 class="section-title" data-ua="Фронтенд Проєкти">Frontend Projects</h2>
+        <p class="section-subtitle" data-ua="Сайти та лендінги від дизайну до продакшну">Websites & landing pages built from design to production</p>
+      </div>
+      <div class="portfolio-grid">
+
+        <a href="https://linkyway.co/" class="card" target="_blank" rel="noopener noreferrer">
+          <div class="card-slider" data-images="./img/link.png">
+            <img src="./img/link.png" alt="Linkyway" class="card-bg-image active-slide">
+          </div>
+          <div class="card-content">
+            <h3>Linkyway</h3>
+            <p data-ua="Агентство послуг лінкбілдінгу">Link building services agency</p>
+            <div class="card-tags">
+              <span>WordPress</span><span>ACF Pro</span><span>SCSS</span><span>JS</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://bohdan2710.github.io/project/" class="card" target="_blank" rel="noopener noreferrer">
+          <div class="card-slider" data-images="./img/proj.png">
+            <img src="./img/proj.png" alt="My Project" class="card-bg-image active-slide">
+          </div>
+          <div class="card-content">
+            <h3>Web Design</h3>
+            <p data-ua="Кастомний інтерактивний веб-дизайн">Custom interactive web design</p>
+            <div class="card-tags">
+              <span>HTML</span><span>SCSS</span><span>GSAP</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://bohdan2710.github.io/Black-Rock/" class="card" target="_blank" rel="noopener noreferrer">
+          <div class="card-slider" data-images="./img/black.png">
+            <img src="./img/black.png" alt="Black Rock" class="card-bg-image active-slide">
+          </div>
+          <div class="card-content">
+            <h3>Black Rock</h3>
+            <p data-ua="Крипто лендінг">Crypto landing page</p>
+            <div class="card-tags">
+              <span>HTML</span><span>CSS</span><span>JS</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://bohdan2710.github.io/KASPIPROFIT/" class="card" target="_blank" rel="noopener noreferrer">
+          <div class="card-slider" data-images="./img/kaspi.png">
+            <img src="./img/kaspi.png" alt="KASPIPROFIT" class="card-bg-image active-slide">
+          </div>
+          <div class="card-content">
+            <h3>KASPIPROFIT</h3>
+            <p data-ua="Крипто інвестиційна платформа">Crypto investment platform</p>
+            <div class="card-tags">
+              <span>HTML</span><span>CSS</span><span>JS</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://bohdan2710.github.io/Legalurlop/" class="card" target="_blank" rel="noopener noreferrer">
+          <div class="card-slider" data-images="./img/legalu.png">
+            <img src="./img/legalu.png" alt="Legalurlop" class="card-bg-image active-slide">
+          </div>
+          <div class="card-content">
+            <h3>Legalurlop</h3>
+            <p data-ua="Туристичний та готельний сайт · Польща">Tourism & hotel website · Poland</p>
+            <div class="card-tags">
+              <span>HTML</span><span>CSS</span><span>JS</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://bohdan2710.github.io/Nordost/" class="card" target="_blank" rel="noopener noreferrer">
+          <div class="card-slider" data-images="./img/nordost.png">
+            <img src="./img/nordost.png" alt="Nordost" class="card-bg-image active-slide">
+          </div>
+          <div class="card-content">
+            <h3>Nordost</h3>
+            <p data-ua="Консалтингова компанія · Туреччина">Turkey consulting company</p>
+            <div class="card-tags">
+              <span>HTML</span><span>CSS</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://bohdan2710.github.io/PiggyPrizes/" class="card" target="_blank" rel="noopener noreferrer">
+          <div class="card-slider" data-images="./img/piggyprizes.png">
+            <img src="./img/piggyprizes.png" alt="Piggy Prizes" class="card-bg-image active-slide">
+          </div>
+          <div class="card-content">
+            <h3>Piggy Prizes</h3>
+            <p data-ua="Безкоштовна онлайн казино гра">Free online casino game</p>
+            <div class="card-tags">
+              <span>HTML</span><span>CSS</span><span>JS</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+
+</html>
