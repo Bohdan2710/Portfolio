@@ -471,7 +471,7 @@ body {
 .auto-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(0,0,0,.4); }
 
 .auto-card-visual {
-  max-height: 600px;
+  aspect-ratio: 16 / 9;
   position: relative;
   overflow: hidden;
   background-size: cover;
@@ -563,6 +563,9 @@ body {
 .grad-indigo { background-color: #4a0080; }
 .grad-teal   { background-color: #006666; }
 .grad-green  { background-color: #0a4d2e; }
+
+.auto-card-wide { grid-column: 1 / -1; }
+.auto-card-wide .auto-card-visual { height: 260px; }
 
 
 .pipeline {
