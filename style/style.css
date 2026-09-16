@@ -667,6 +667,8 @@ body {
 .grad-indigo { background-color: #4a0080; }
 .grad-teal   { background-color: #006666; }
 .grad-green  { background-color: #0a4d2e; }
+.grad-amber  { background-color: #8a5a00; }
+.grad-red    { background-color: #7a1220; }
 
 .pipeline {
   display: flex;

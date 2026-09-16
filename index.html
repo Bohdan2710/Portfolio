@@ -108,6 +108,7 @@
           <p data-ua="Web Developer з 3-річним досвідом створення, оптимізації та підтримки адаптивних вебсайтів. Розробляю інструменти, що автоматизують створення багатосторінкових сайтів, переклад та унікалізацію коду для команд із великими обсягами трафіку.">Web Developer with 3 years of experience in building, optimizing, and maintaining responsive websites. I develop tools that automate the creation of multi-page websites, translation, and code obfuscation for teams handling high traffic volumes.</p>
           <p style="margin-top: 16px;" data-ua="Щодня використовую AI-технології для оптимізації процесів та скорочення витрат. Будую автоматизовані пайплайни через n8n та працюю напряму з Claude API, Gemini API та OpenRouter. Мій фокус - не просто автоматизація задач, а переосмислення процесів.">I actively use AI technologies daily to optimize workflows and reduce costs. I build automated pipelines using n8n and work directly with Claude API, Gemini API, and OpenRouter. My focus is rethinking entire workflows — not just automating tasks.</p>
           <p style="margin-top: 16px;" data-ua="Також займаюсь оптимізацією сайтів під AI-пошук — створюю додаткові сайти-сателіти, структуровані для потрапляння у видачу AI-відповідей (Google AI Overviews, ChatGPT, Perplexity). Аналізую метрики доменів через Ahrefs і SpySERP, а конкурентів по бренду — технічне SEO, дата реєстрації домену, DR та джерела трафіку. Розробив власні інструменти аналітики, що показують, які шаблони конвертують краще, з якого пристрою заходять, бот це чи реальний користувач, клікабельність та час на сайті.">I also work on site optimization for AI-driven search — building supplementary sites structured to surface in AI answers (Google AI Overviews, ChatGPT, Perplexity). I track domain metrics through Ahrefs and SpySERP, and analyze competitors by brand — technical SEO, domain registration age, DR, and traffic sources. I've built my own analytics tools that show which templates convert best, which device visitors come from, whether traffic is bot or human, click-through behavior, and time on site.</p>
+          <p style="margin-top: 16px;" data-ua="Веду поточне технічне обслуговування портфеля доменів і сайтів: переклеюю сайт на новий домен через 301-редирект, підтримую клоакінг («таблетки»), що показує різний контент ботам пошукових систем і живим відвідувачам. Коли Cloudflare-акаунт блокують за скаргами (abuse), переключаю сайти на інший акаунт без простою. Домени, що потрапили у списки фішингу, знімаю з блокування — міняю редиректи і проходжу повторну модерацію.">I also handle ongoing domain and site maintenance: rebuilding a site onto a new domain through a 301 redirect, and running a cloaking layer ("tablets") that shows different content to search engine bots versus regular visitors. When a Cloudflare account gets suspended for abuse complaints, I switch the affected sites to another account with minimal downtime. For domains flagged on phishing blocklists, I clear the flag by changing redirects and going through re-review.</p>
         </div>
         <div class="skills-block">
           <div class="skills-group">
@@ -193,7 +194,7 @@
           </div>
         </div>
         <div class="auto-card">
-          <div class="auto-card-visual grad-blue">
+          <div class="auto-card-visual grad-blue has-screenshot" data-images="./img/projects/translator-1.png,./img/projects/translator-2.png,./img/projects/translator-3.png">
           </div>
           <div class="auto-card-pipeline">
             <div class="pipeline">
@@ -365,6 +366,138 @@
             </div>
           </div>
         </div>
+        <div class="auto-card auto-card-wide">
+          <div class="auto-card-visual grad-red has-screenshot" data-images="./img/projects/tldlytics-1.png,./img/projects/tldlytics-2.png,./img/projects/tldlytics-3.png">
+          </div>
+          <div class="auto-card-pipeline">
+            <div class="pipeline">
+              <div class="p-step" data-ua="Джерело">Source Panel</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step" data-ua="Метрики">Metrics</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step" data-ua="Перевірка трасту">Trust Check</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step p-end" data-ua="Список">Ranked List</div>
+            </div>
+          </div>
+          <div class="auto-card-content">
+            <div class="auto-card-badges">
+              <span class="badge badge-nda" data-ua="NDA · Продакшн">NDA · Production</span>
+              <span class="badge badge-stack">Python</span>
+              <span class="badge badge-stack">Flask</span>
+              <span class="badge badge-stack">Ahrefs API</span>
+              <span class="badge badge-stack">Wayback Machine</span>
+              <span class="badge badge-stack">OpenAI</span>
+              <span class="badge badge-stack">Docker</span>
+            </div>
+            <h3 data-ua="Система аналізу доменів, що звільняються">Drop Domain Analytics System</h3>
+            <p data-ua="Система сама забирає списки доменів, що звільняються, з зовнішніх джерел і ніколи не завантажує один і той самий домен двічі. Кожен новий домен перевіряється за метриками сили та трафіку, а слабкі одразу відсіюються. Ті, що пройшли відбір, проходять аналіз історії через інтернет-архів: чи був цей сайт колись державною, освітньою чи іншою довіреною організацією - такі домени цінніші для подальшого використання.">The system pulls newly released domains from external source panels on its own and never loads the same domain twice. Every new domain is checked against strength and traffic metrics, with weak ones filtered out automatically. Domains that pass are analyzed against web archive history to detect whether the site once belonged to a government, educational, or other trusted institution, which makes it more valuable to reuse.</p>
+            <div class="auto-card-metrics">
+              <div class="metric">
+                <span class="metric-val">38k</span>
+                <span class="metric-label" data-ua="доменів у базі">domains tracked</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">Auto</span>
+                <span class="metric-label" data-ua="відсіювання слабких доменів">weak-domain filtering</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">History-based</span>
+                <span class="metric-label" data-ua="перевірка довіри через архів">trust scoring via archive</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">$0.002</span>
+                <span class="metric-label" data-ua="за перевірку одного домену">per domain trust check</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="auto-card auto-card-wide">
+          <div class="auto-card-visual grad-amber has-screenshot" data-images="./img/projects/linkflow-1.png,./img/projects/linkflow-2.png,./img/projects/linkflow-3.png">
+          </div>
+          <div class="auto-card-pipeline">
+            <div class="pipeline">
+              <div class="p-step" data-ua="База сайтів">Site Pool</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step" data-ua="План посилань">Link Plan</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step" data-ua="Розміщення">Placement</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step p-end" data-ua="Перевірка">Verification</div>
+            </div>
+          </div>
+          <div class="auto-card-content">
+            <div class="auto-card-badges">
+              <span class="badge badge-nda" data-ua="NDA · Продакшн">NDA · Production</span>
+              <span class="badge badge-stack">Python</span>
+              <span class="badge badge-stack">Flask</span>
+              <span class="badge badge-stack">SQLite</span>
+              <span class="badge badge-stack">LLM API</span>
+              <span class="badge badge-stack">Proxy Rotation</span>
+              <span class="badge badge-stack">Docker</span>
+            </div>
+            <h3 data-ua="CRM для розміщення посилань">Link Placement CRM</h3>
+            <p data-ua="Панель веде базу сайтів для розміщення посилань і сама планує, які фрази використовувати в кожному посиланні, щоб набір виглядав природно. Частину посилань публікує повністю сама через готові статті, іншу частину розподіляє між виконавцями як звичайні завдання. Після публікації система сама перевіряє, що посилання дійсно з'явилось на сторінці, і показує керівнику статус по кожному замовленню в реальному часі.">The panel maintains a database of sites for link placement and plans which phrases to use in each link so the overall set looks natural. Some links get published fully automatically through ready-made articles, while others are handed out to human workers as regular tasks. After publishing, the system verifies the link actually appeared on the page and shows a manager live status for every order.</p>
+            <div class="auto-card-metrics">
+              <div class="metric">
+                <span class="metric-val">4 roles</span>
+                <span class="metric-label" data-ua="клієнт, виконавець, тімлід, адмін">client, worker, lead, admin</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">Auto + Manual</span>
+                <span class="metric-label" data-ua="два сценарії розміщення">two placement scenarios</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">Auto</span>
+                <span class="metric-label" data-ua="перевірка появи посилання">placement verification</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">SLA</span>
+                <span class="metric-label" data-ua="контроль дедлайнів по кожній ссилці">deadline tracking per link</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="auto-card auto-card-wide">
+          <div class="auto-card-visual grad-indigo has-screenshot" data-images="./img/projects/sitegen-3.png,./img/projects/sitegen-2.png,./img/projects/sitegen-1.png">
+          </div>
+          <div class="auto-card-pipeline">
+            <div class="pipeline">
+              <div class="p-step" data-ua="Налаштування">Site Setup</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step" data-ua="Дизайн і контент">Design & Content</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step" data-ua="AI-генерація">AI Generation</div>
+              <div class="p-arrow">→</div>
+              <div class="p-step p-end" data-ua="Готовий сайт">Live Site</div>
+            </div>
+          </div>
+          <div class="auto-card-content">
+            <div class="auto-card-badges">
+              <span class="badge badge-nda" data-ua="NDA · Продакшн">NDA · Production</span>
+              <span class="badge badge-stack">Node.js</span>
+              <span class="badge badge-stack">Express</span>
+              <span class="badge badge-stack">Gemini API</span>
+              <span class="badge badge-stack">Docker</span>
+            </div>
+            <h3 data-ua="Панель для створення сайтів">Site Creation Panel</h3>
+            <p data-ua="Панель, де сайт збирається покроково: домен і назва, логотип і фавікон, кольорова схема і шрифти, фонові зображення - а тексти й структуру сторінок дописує AI. Кожен користувач працює зі своїм списком проєктів, може дублювати, масово видаляти чи переглядати готовий сайт прямо в панелі перед публікацією.">A panel where a site is assembled step by step - domain and name, logo and favicon, color scheme and fonts, background images - while AI fills in the page text and structure. Each user works with their own project list, can duplicate, bulk-delete, or preview the finished site right inside the panel before it goes live.</p>
+            <div class="auto-card-metrics">
+              <div class="metric">
+                <span class="metric-val">Step-by-step</span>
+                <span class="metric-label" data-ua="налаштування без розробника">setup with no developer needed</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">AI</span>
+                <span class="metric-label" data-ua="генерація текстів і структури">content & structure generation</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">Live Preview</span>
+                <span class="metric-label" data-ua="перегляд до публікації">before publishing</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <section class="section portfolio-section" id="projects">
@@ -455,6 +588,30 @@
             <p data-ua="Безкоштовна онлайн казино гра">Free online casino game</p>
             <div class="card-tags">
               <span>HTML</span><span>CSS</span><span>JS</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://arenacasino.site/" class="card" target="_blank" rel="noopener noreferrer">
+          <div class="card-slider" data-images="./img/arenacasino.png">
+            <img src="./img/arenacasino.png" alt="Arena Casino" class="card-bg-image active-slide">
+          </div>
+          <div class="card-content">
+            <h3>Arena Casino</h3>
+            <p data-ua="Казино-лендінг · Німеччина · згенеровано власним пайплайном">Casino landing page · Germany · generated by my own pipeline</p>
+            <div class="card-tags">
+              <span>HTML</span><span>CSS</span><span>JS</span><span>AI-Generated</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://goldenlioncasinoplay.org/" class="card" target="_blank" rel="noopener noreferrer">
+          <div class="card-slider" data-images="./img/goldenlion.png">
+            <img src="./img/goldenlion.png" alt="Golden Lion Casino" class="card-bg-image active-slide">
+          </div>
+          <div class="card-content">
+            <h3>Golden Lion Casino</h3>
+            <p data-ua="Казино-лендінг · Німеччина · згенеровано власним пайплайном">Casino landing page · Germany · generated by my own pipeline</p>
+            <div class="card-tags">
+              <span>HTML</span><span>CSS</span><span>JS</span><span>AI-Generated</span>
             </div>
           </div>
         </a>
